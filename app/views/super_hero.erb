@@ -5,21 +5,33 @@
 </head>
 <body>
 <form method="post" action="/teams">
-  Team Name: <input type="text" name="[team][name]"><br>
-  Team Motto: <input type="text" name="[team][motto]"><br>
+  Team Name: <input id="team[name]" type="text" name="[team][name]"><br>
+  Team Motto: <input id="team[motto]" type="text" name="[team][motto]"><br>
   <h2>Hero 1</h2>
-  Hero's Name: <input type="text" name="[team][member][0][name]"><br>
-  Hero's Power: <input type="text" name="h1power"><br>
-  Hero's Biography: <input type="text" name="h1bio"><br>
+  Hero's Name: <input id="member1_name" type="text" name="[team][member][0][name]"><br>
+  Hero's Power: <input id="member1_power" type="text" name="[team][member][0][power]"><br>
+  Hero's Biography: <input id="member1_bio" type="text" name="[team][member][0][bio]"><br>
   <h2>Hero 2</h2>
-  Hero's Name: <input type="text" name="h2name"><br>
-  Hero's Power: <input type="text" name="h2power"><br>
-  Hero's Biography: <input type="text" name="h2bio"><br>
+  Hero's Name: <input id="member2_name" type="text" name="[team][member][1][name]"><br>
+  Hero's Power: <input id="member2_power" type="text" name="[team][member][1][power]"><br>
+  Hero's Biography: <input id="member2_bio" type="text" name="[team][member][1][bio]"><br>
   <h2>Hero 3</h2>
-  Hero's Name: <input type="text" name="h3name"><br>
-  Hero's Power: <input type="text" name="h3power"><br>
-  Hero's Biography: <input type="text" name="h3bio"><br>
+  Hero's Name: <input id="member3_name" type="text" name="team][member][2][name]"><br>
+  Hero's Power: <input id="member3_power" type="text" name="team][member][2][power]"><br>
+  Hero's Biography: <input id="member3_bio" type="text" name="team][member][2][bio]"><br>
   <input type="submit">
 </body>
 </form>
 </html>
+fill_in("team[name]", :with => "Team Ruby")
+fill_in("team[motto]", :with => "We love Ruby!")
+fill_in("member1_name", :with => "Amanda")
+fill_in("member1_power", :with => "Ruby")
+fill_in("member1_bio", :with => "I love Ruby!")
+fill_in("member2_name", :with => "Arel")
+fill_in("member2_power", :with => "JavaScript")
+fill_in("member2_bio", :with => "I love JavaScript!")
+fill_in("member3_name", :with => "Katie")
+fill_in("member3_power", :with => "Sinatra")
+fill_in("member3_bio", :with => "I love Sinatra!")
+click_button 'submit'
